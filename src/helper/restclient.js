@@ -1,13 +1,9 @@
-//import axios from "axios"
-const axios = require('axios')
-
-const url = 'https://jsonplaceholder.typicode.com/posts/:postId'
+import axios from "axios"
 
 let axiosConfig = {
     headers: {
         'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'bz-token': '345'
+        'Accept': 'application/json'
     }
 }
 
@@ -49,17 +45,29 @@ const restClient = {
         })
         return restClient
     },
+    headers: (header) => {
+        axiosConfig = { ...axiosConfig, headers: { ...axiosConfig.headers, ...header } }
+    },
     execute: () => {
-        axios[this.method](this.url, axiosConfig).then(response => {
-            console.log(response)
-        }, error => {
-            console.log(error)
-        })
+        switch (this.method) {
+            case 'get':
+            case 'delete':
+                axios[this.method](this.url, axiosConfig).then(response => {
+                    console.log(response)
+                }, error => {
+                    console.log(error)
+                })
+                break;
+            case 'post':
+            case 'put':
+                axios[this.method](this.url, this.requestBody, axiosConfig).then(response => {
+                    console.log(response)
+                }, error => {
+                    console.log(error)
+                })
+                break;
+        }
     }
 }
 
-restClient
-    .get(url)
-    //.queryParams({ 'id': 3 })
-    .pathVariables({ 'postId': 1 })
-    .execute()
+export default restClient;
