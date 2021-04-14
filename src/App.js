@@ -1,10 +1,10 @@
 import './App.css';
-import ReviewDashboard from './app-modules/review-dashboard/container/container';
+import AppRoutes from './routes-config/app-routes'
 
 function App() {
   return (
     <div className="App">
-       <ReviewDashboard></ReviewDashboard>
+      <AppRoutes />
     </div>
   );
 }

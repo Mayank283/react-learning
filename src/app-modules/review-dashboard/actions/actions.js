@@ -7,6 +7,8 @@ const getReviews = (dispatch) => {
     dispatch({ type: actionTypes.GET_REVIEWS, payload: reviewsData })
 }
 
-export default {
-    getReviews
+const reviewActions = {
+    getReviews:getReviews
 }
+
+export default reviewActions
