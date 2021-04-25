@@ -4,14 +4,14 @@ import {
 } from 'react-router-dom'
 
 import reviewRoute from '../app-modules/review-dashboard/routes/routes'
-import formRoute from '../app-modules/form/routes'
+import accountRoutes from '../app-modules/account/routes/routes';
 
 const appRoutes = () => (
     <HashRouter>
         <Switch>
             <Suspense>
                 <Route path='/review' component={reviewRoute} />
-                <Route path='/form' component={formRoute} />
+                <Route path='/account' component={accountRoutes} />
             </Suspense>
         </Switch>
     </HashRouter>

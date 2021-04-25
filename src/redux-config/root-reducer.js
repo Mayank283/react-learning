@@ -1,10 +1,11 @@
 import { combineReducers } from "redux";
+import filterReducer from "../app-components/filter/reducer/reducer";
 import reviewReducer from '../app-modules/review-dashboard/reducer/reducer'
-import formReducer from '../app-modules/form/reducer'
+
 
 const rootReducer = combineReducers({
     reviewReducer: reviewReducer,
-    formReducer: formReducer
+    filterReducer: filterReducer
 })
 
 export default rootReducer;

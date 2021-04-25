@@ -1,12 +1,14 @@
 import TextField from '@material-ui/core/TextField'
 
-const TextArea = ({ input, meta, ...rest }) => {
+const TextInput = ({ input, meta, ...rest }) => {
     return (
         <TextField
+            style={{ marginTop: 5, minWidth: 220 }}
             {...input}
             {...rest}
             onChange={input.onChange}
+            
         />);
 }
 
-export default TextArea
+export default TextInput

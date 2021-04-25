@@ -1,10 +1,12 @@
+import Filter from "../../../app-components/filter/container/container";
+
 const reviewDashboard = (props) => {
 
-    console.log("mayank", props);
-
+    console.log('review props', props)
     return (<div>
         reviews
-        <button onClick = {props.getReviews}>clickMe</button>
+        <button onClick={props.getReviews}>clickMe</button>
+        <Filter />
     </div>);
 }
 

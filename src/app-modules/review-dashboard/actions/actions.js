@@ -1,10 +1,10 @@
 //This file will contain the actual function. It's like the service classes in java
-import * as actionTypes from '../../../redux-config/action-types'
+import * as ActionTypes from '../../../redux-config/action-types'
 
 
 const getReviews = (dispatch) => {
     const reviewsData = [{ id: 1, comment: 'very good' }, { id: 2, comment: 'very good 2' }]
-    dispatch({ type: actionTypes.GET_REVIEWS, payload: reviewsData })
+    dispatch({ type: ActionTypes.GET_REVIEWS, payload: reviewsData })
 }
 
 const reviewActions = {

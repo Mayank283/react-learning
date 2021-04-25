@@ -1,1 +1,2 @@
 export const GET_REVIEWS = 'GET_REVIEWS';
+export const UPDATE_FILTER_STATE = 'UPDATE_FILTER_STATE';

@@ -4,13 +4,14 @@ import ReviewActions from '../actions/actions'
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => ({
-    reviewList:state.reviewReducer.reviewList
+    reviewList: state?.reviewReducer?.reviewList || {},
+    filter: state?.filterReducer?.['filter'] || {}
 })
 
 const mapDispatchToProps = dispatch => ({
-        getReviews : () => {
-            ReviewActions.getReviews(dispatch);
-        }
+    getReviews: () => {
+        ReviewActions.getReviews(dispatch);
+    }
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(reviewDashboard));
